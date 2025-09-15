@@ -12,15 +12,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true # tải theme nếu dùng submodule
+          submodules: recursive # quan trọng: tải luôn submodule con
           fetch-depth: 0
-          persist-credentials: false # tránh lỗi git credential
+          persist-credentials: false
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "latest"
           extended: true
+
+      - name: Update theme submodules
+        run: git submodule update --init --recursive --remote
 
       - name: Build
         run: hugo --minify
