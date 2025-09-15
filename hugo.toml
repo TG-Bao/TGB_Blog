@@ -1,4 +1,4 @@
-baseURL = "https://<TG-Bao>.github.io/TGB_Blog/"
+baseURL = "https://TG-Bao.github.io/TGB_Blog/"
 languageCode = "vi"
 title = "Blog Lập Trình Mạng"
 theme = "PaperMod"
